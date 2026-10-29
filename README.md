@@ -21,6 +21,7 @@ Runs landscape evolution experiments initialized from a pre-existing NetCDF file
 Runs a 4-million-year landscape evolution simulation using Landlab. The two-dimensional model domain is divided into three geological zones (A, B, and C) representing distinct detrital zircon sources. The model simulates uplift, erosion, and soil diffusion while tracking the evolution and transport of sediment and bedrock properties. Mean and standard deviation of erosion rates and zircon concentrations are calculated for each zone. Intermediate and final model states are saved as NetCDF files, and time-dependent results are exported to CSV.
 
 Statistical Provenance Models
+
 •	experiments_to_stats_layers and experiments_to_stats_static:
 Use synthetic detrital zircon age populations to evaluate how different sediment-mixing assumptions influence reconstructed provenance. The scripts combine three geological source populations with defined age distributions, uncertainties, and grain counts, using zircon concentrations and lithologic proportions derived from the landscape evolution models. They compare three mixing approaches:
 
