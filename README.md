@@ -14,14 +14,14 @@ The repository is organized into scripts for landscape evolution simulations, st
 ### 1. Code
 Landscape Evolution Models
 
-•	experiments_layers_new
+•	experiments_layers_new:
 Runs landscape evolution experiments initialized from a pre-existing NetCDF file. Using Landlab, the model simulates 250,000 years of uplift, erosion, and soil diffusion across layered geological units (A, B, and C), each with distinct detrital zircon concentrations. It tracks changes in lithology, erosion rates, and zircon concentrations as geological layers are uplifted, eroded, and transported. Intermediate and final model states are saved as NetCDF files, while time-dependent erosion rates, outlet zircon concentrations, and lithologic proportions are exported to CSV for subsequent analysis.
 
-•	experiments_static_new
+•	experiments_static_new:
 Runs a 4-million-year landscape evolution simulation using Landlab. The two-dimensional model domain is divided into three geological zones (A, B, and C) representing distinct detrital zircon sources. The model simulates uplift, erosion, and soil diffusion while tracking the evolution and transport of sediment and bedrock properties. Mean and standard deviation of erosion rates and zircon concentrations are calculated for each zone. Intermediate and final model states are saved as NetCDF files, and time-dependent results are exported to CSV.
 
 Statistical Provenance Models
-•	experiments_to_stats_layers and experiments_to_stats_static
+•	experiments_to_stats_layers and experiments_to_stats_static:
 Use synthetic detrital zircon age populations to evaluate how different sediment-mixing assumptions influence reconstructed provenance. The scripts combine three geological source populations with defined age distributions, uncertainties, and grain counts, using zircon concentrations and lithologic proportions derived from the landscape evolution models. They compare three mixing approaches:
 
   1.	Null model: mixing based on source proportions.
@@ -30,15 +30,15 @@ Use synthetic detrital zircon age populations to evaluate how different sediment
 
 For each modeled time step, the scripts generate 125-grain samples across 500 iterations and evaluate differences between the resulting age distributions using Kolmogorov–Smirnov (KS) statistics and R^2 metrics. Results are saved to Excel files for comparison and further analysis.
 
-•	dd_stats_lay and dd_stats_sta
+•	dd_stats_lay and dd_stats_sta:
 Apply the statistical mixing framework to real detrital zircon age distributions from published datasets. The scripts use three geological source populations and combine their age distributions with zircon concentrations and lithologic proportions from the landscape evolution models. They compare the null, mass-based, and grain-number-based mixing approaches using 125-grain samples across 500 iterations. KS statistics and (R^2) metrics are calculated to assess differences between the modeled age distributions, and the results are exported to Excel files.
 
 ### 2. Experiment Data
 
-•	final_nc_files
+•	final_nc_files:
 Contains final NetCDF outputs from the landscape evolution simulations. These files store spatially distributed model fields, including topographic elevation, bedrock elevation, soil depth, and sediment and bedrock concentrations for the three source units (A, B, and C). Scripts in the plots directory load these files, configure grid boundary conditions, and visualize the modeled topography and spatial distribution of source-specific properties.
 
-•	layers_experiments and static_experiments
+•	layers_experiments and static_experiments:
 Contain Excel files with statistical provenance-model results for the layered and static landscape experiments, respectively. The spreadsheets include KS-statistic and R^2 results for the three mixing approaches, together with the (KA/KB) ratio used to characterize the experimental conditions. These outputs support comparisons of how source characteristics and mixing assumptions influence detrital zircon provenance estimates.
 
 ## Modeling Workflow
